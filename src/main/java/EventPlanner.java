@@ -29,7 +29,9 @@ public class EventPlanner {
 
   public void costCalc(){
     int result = 0;
-
+    for (int i=0; i<selection.size(); i++){
+      result += costs.get(selection.get(i));
+    }
     totalCost = result;
   }
 

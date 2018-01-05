@@ -12,7 +12,6 @@ public class EventPlannerTest {
   String[] drinkItems = testEvent.getDrinks();
   String[] entertainmentItems = testEvent.getEntertainment();
   Map cost = testEvent.getCost();
-  int total = testEvent.getTotal();
   List<String> selection = testEvent.getSelections();
 
   String arcade = testEvent.getEntertainment()[4];
@@ -73,8 +72,8 @@ public class EventPlannerTest {
     String selectTwo = selection.get(1);
     String selectThree = selection.get(2);
     System.out.println(String.format("selection: %s, %s, %s", selectOne, selectTwo, selectThree));
-    System.out.println("Total: " + total);
-    assertEquals(true, total >= 115);
+    System.out.println("Total: " + testEvent.getTotal());
+    assertEquals(true, testEvent.getTotal() >= 115);
   }
 //  @Test
 //  public void getTotal_modifyTotalByNumOfGuests_int(){
