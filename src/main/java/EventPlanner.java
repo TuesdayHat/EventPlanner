@@ -41,6 +41,9 @@ public class EventPlanner {
     totalCost = result;
   }
 
+  public void couponCheck(String code){
+
+  }
 
   //GETTER FUNCTIONS______________________
   public int getGuests(){
