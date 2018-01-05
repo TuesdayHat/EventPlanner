@@ -42,7 +42,29 @@ public class EventPlanner {
   }
 
   public void couponCheck(String code){
+    boolean isFood = false;
+    for (String select: selection){
+      for (String item: foods){
+        if (item.equals(select)){
+          isFood = true;
+        } else {
+          continue;
+        }
+      }
+    }
+    switch(code){
+      case "gamer":
+        if (this.guests >= 10 && selection.contains("arcade")){
+          totalCost -= 75;
+        }
+        break;
 
+      case "music":
+        if (this.guests >= 100 && isFood){
+          setSelection("dj");
+        }
+        break;
+    }
   }
 
   //GETTER FUNCTIONS______________________
