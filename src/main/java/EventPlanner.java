@@ -2,7 +2,7 @@ public class EventPlanner {
   private int guests;
 
   EventPlanner(){
-    guests = -2;
+    guests = 0;
   }
 
   public int getGuests(){
