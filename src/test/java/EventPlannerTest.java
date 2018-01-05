@@ -42,10 +42,10 @@ public class EventPlannerTest {
   }
   @Test
   public void getCost_checkDrinkCosts_int(){
-    assertEquals(10, cost.get(drinkItems[0])); //drinkItems[0] should be juice bar
+    assertEquals(30, cost.get(drinkItems[0])); //drinkItems[0] should be juice bar
   }
   @Test
   public void getCost_checkEntertainmentCosts_int(){
-    assertEquals(10, cost.get(entertainmentItems[0])); //entertainmentItems[0] should be dj
+    assertEquals(100, cost.get(entertainmentItems[0])); //entertainmentItems[0] should be dj
   }
 }
