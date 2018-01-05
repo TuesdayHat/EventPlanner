@@ -5,7 +5,7 @@ import models.Inventory;
 
 public class EventPlanner {
   Inventory inventory = new Inventory();
-  private int guests;
+  private Integer guests;
   private String[] foods;
   private String[] drinks;
   private String[] entertainment;
@@ -27,7 +27,7 @@ public class EventPlanner {
     this.selection.add(select);
   }
 
-  public void setGuests(int select){
+  public void setGuests(Integer select){
     this.guests = select;
   }
 
@@ -36,6 +36,8 @@ public class EventPlanner {
     for (int i=0; i<selection.size(); i++){
       result += costs.get(selection.get(i));
     }
+
+    result *= (1 + (0.2 * guests));
     totalCost = result;
   }
 
