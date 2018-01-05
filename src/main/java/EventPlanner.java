@@ -1,6 +1,6 @@
 public class EventPlanner {
   private int guests;
-  private String[] food = new String[0];
+  private String[] food = {"pizza", "cheese platter", "continental breakfast", "steak", "cookies", "doughnuts"};
 
   EventPlanner(){
     guests = 0;
