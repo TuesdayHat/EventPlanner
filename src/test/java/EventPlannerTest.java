@@ -10,6 +10,7 @@ public class EventPlannerTest {
   String[] drinkItems = testEvent.getDrinks();
   String[] entertainmentItems = testEvent.getEntertainment();
   Map cost = testEvent.getCost();
+  int total = testEvent.getTotal();
 
   @Test
   public void eventPlanner_instantiatesCorrectly_bool(){
@@ -48,4 +49,12 @@ public class EventPlannerTest {
   public void getCost_checkEntertainmentCosts_int(){
     assertEquals(100, cost.get(entertainmentItems[0])); //entertainmentItems[0] should be dj
   }
+  @Test
+  public void getTotal_addUpCostOfSelections_int(){
+    assertEquals(true, total >= 115);
+  }
+//  @Test
+//  public void getTotal_modifyTotalByNumOfGuests_int(){
+//    assertEquals(true, total == 575);
+//  }
 }

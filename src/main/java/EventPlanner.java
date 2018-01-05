@@ -8,16 +8,24 @@ public class EventPlanner {
   private String[] drinks;
   private String[] entertainment;
   private Map<String, Integer> costs;
-
+  private int totalCost;
 
   EventPlanner(){
     guests = 0;
+    totalCost = 0;
     foods = inventory.getFood();
     drinks = inventory.getDrinks();
     entertainment = inventory.getEntertainment();
     costs = inventory.getCosts();
   }
 
+  public void costCalc(){
+    int result = 0;
+    totalCost = result;
+  }
+
+
+  //GETTER FUNCTIONS______________________
   public int getGuests(){
     return guests;
   }
@@ -32,5 +40,8 @@ public class EventPlanner {
   }
   public Map<String, Integer> getCost(){
     return costs;
+  }
+  public int getTotal(){
+    return totalCost;
   }
 }
