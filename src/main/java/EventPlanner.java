@@ -20,10 +20,11 @@ public class EventPlanner {
     drinks = inventory.getDrinks();
     entertainment = inventory.getEntertainment();
     costs = inventory.getCosts();
+
   }
 
-  public void addSelection(){
-
+  public void setSelection(String select){
+    this.selection.add(select);
   }
 
   public void costCalc(){

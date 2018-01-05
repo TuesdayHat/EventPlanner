@@ -13,7 +13,11 @@ public class EventPlannerTest {
   String[] entertainmentItems = testEvent.getEntertainment();
   Map cost = testEvent.getCost();
   int total = testEvent.getTotal();
-  List selection = testEvent.getSelections();
+  List<String> selection = testEvent.getSelections();
+
+  String arcade = testEvent.getEntertainment()[4];
+  String pizza = testEvent.getFood()[0];
+  String soda = testEvent.getDrinks()[8];
 
   @Test
   public void eventPlanner_instantiatesCorrectly_bool(){
@@ -42,7 +46,7 @@ public class EventPlannerTest {
 
   @Test
   public void getCost_checkFoodCosts_int(){
-    assertEquals(10, cost.get(foodItems[0])); //foodItems[0] should be pizza
+    assertEquals(10, cost.get(pizza)); //foodItems[0] should be pizza
   }
   @Test
   public void getCost_checkDrinkCosts_int(){
@@ -54,13 +58,24 @@ public class EventPlannerTest {
   }
   @Test
   public void getSelection_storeListOfAllSelections_List(){
+    testEvent.setSelection(pizza);
     assertEquals(true, selection.size() > 0);
   }
 
-//  @Test
-//  public void getTotal_addUpCostOfSelections_int(){
-//    assertEquals(true, total >= 115);
-//  }
+  @Test
+  public void getTotal_addUpCostOfSelections_int(){
+    testEvent.setSelection(pizza);
+    testEvent.setSelection(arcade);
+    testEvent.setSelection(soda);
+    testEvent.costCalc();
+
+    String selectOne = selection.get(0);
+    String selectTwo = selection.get(1);
+    String selectThree = selection.get(2);
+    System.out.println(String.format("selection: %s, %s, %s", selectOne, selectTwo, selectThree));
+    System.out.println("Total: " + total);
+    assertEquals(true, total >= 115);
+  }
 //  @Test
 //  public void getTotal_modifyTotalByNumOfGuests_int(){
 //    assertEquals(true, total == 575);
