@@ -27,6 +27,10 @@ public class EventPlanner {
     this.selection.add(select);
   }
 
+  public void setGuests(int select){
+    this.guests = select;
+  }
+
   public void costCalc(){
     int result = 0;
     for (int i=0; i<selection.size(); i++){

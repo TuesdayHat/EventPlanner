@@ -68,15 +68,28 @@ public class EventPlannerTest {
     testEvent.setSelection(soda);
     testEvent.costCalc();
 
+//    String selectOne = selection.get(0);
+//    String selectTwo = selection.get(1);
+//    String selectThree = selection.get(2);
+//    System.out.println(String.format("selection: %s, %s, %s", selectOne, selectTwo, selectThree));
+//    System.out.println("Total: " + testEvent.getTotal());
+    assertEquals(true, testEvent.getTotal() >= 115);
+  }
+
+  @Test
+  public void getTotal_modifyTotalByNumOfGuests_int(){
+    testEvent.setSelection(pizza);
+    testEvent.setSelection(arcade);
+    testEvent.setSelection(soda);
+    testEvent.setGuests(20);
+
+    testEvent.costCalc();
+
     String selectOne = selection.get(0);
     String selectTwo = selection.get(1);
     String selectThree = selection.get(2);
-    System.out.println(String.format("selection: %s, %s, %s", selectOne, selectTwo, selectThree));
+    System.out.println(String.format("selection: %s, %s, %s -- %d people", selectOne, selectTwo, selectThree, testEvent.getGuests()));
     System.out.println("Total: " + testEvent.getTotal());
-    assertEquals(true, testEvent.getTotal() >= 115);
+    assertEquals(true, testEvent.getTotal() == 575);
   }
-//  @Test
-//  public void getTotal_modifyTotalByNumOfGuests_int(){
-//    assertEquals(true, total == 575);
-//  }
 }
