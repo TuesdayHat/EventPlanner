@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 public class EventPlannerTest {
   EventPlanner testEvent = new EventPlanner();
   int guests = testEvent.getGuests();
-  int foodItems = testEvent.getFood().length;
+  String[] foodItems = testEvent.getFood();
+  String[] drinkItems = testEvent.getDrinks();
+  String[] entertainmentItems = testEvent.getEntertainment();
 
   @Test
   public void eventPlanner_instantiatesCorrectly_bool(){
@@ -19,6 +21,16 @@ public class EventPlannerTest {
 
   @Test
   public void getFood_getFoodOffered_int(){
-    assertEquals(true, foodItems > 0);
+    assertEquals(true, foodItems.length > 0);
+  }
+
+  @Test
+  public void getDrinks_getDrinksOffered_int(){
+    assertEquals(true, drinkItems.length > 0);
+  }
+
+  @Test
+  public void getEntertainment_getShowsOffered_int(){
+    assertEquals(true, entertainmentItems.length >0);
   }
 }
