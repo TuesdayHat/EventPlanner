@@ -1,4 +1,6 @@
 import org.junit.Test;
+
+import java.util.List;
 import java.util.Map;
 import static org.junit.Assert.*;
 
@@ -11,6 +13,7 @@ public class EventPlannerTest {
   String[] entertainmentItems = testEvent.getEntertainment();
   Map cost = testEvent.getCost();
   int total = testEvent.getTotal();
+  List selection = testEvent.getSelections();
 
   @Test
   public void eventPlanner_instantiatesCorrectly_bool(){
@@ -50,9 +53,14 @@ public class EventPlannerTest {
     assertEquals(100, cost.get(entertainmentItems[0])); //entertainmentItems[0] should be dj
   }
   @Test
-  public void getTotal_addUpCostOfSelections_int(){
-    assertEquals(true, total >= 115);
+  public void getSelection_storeListOfAllSelections_List(){
+    assertEquals(true, selection.size() > 0);
   }
+
+//  @Test
+//  public void getTotal_addUpCostOfSelections_int(){
+//    assertEquals(true, total >= 115);
+//  }
 //  @Test
 //  public void getTotal_modifyTotalByNumOfGuests_int(){
 //    assertEquals(true, total == 575);

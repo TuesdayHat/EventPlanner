@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import models.Inventory;
 
@@ -9,6 +11,7 @@ public class EventPlanner {
   private String[] entertainment;
   private Map<String, Integer> costs;
   private int totalCost;
+  private List<String> selection = new ArrayList<>();
 
   EventPlanner(){
     guests = 0;
@@ -19,8 +22,13 @@ public class EventPlanner {
     costs = inventory.getCosts();
   }
 
+  public void addSelection(){
+
+  }
+
   public void costCalc(){
     int result = 0;
+
     totalCost = result;
   }
 
@@ -43,5 +51,8 @@ public class EventPlanner {
   }
   public int getTotal(){
     return totalCost;
+  }
+  public List<String> getSelections(){
+    return selection;
   }
 }
