@@ -1,4 +1,5 @@
 import org.junit.Test;
+import java.util.Map;
 import static org.junit.Assert.*;
 
 
@@ -8,6 +9,7 @@ public class EventPlannerTest {
   String[] foodItems = testEvent.getFood();
   String[] drinkItems = testEvent.getDrinks();
   String[] entertainmentItems = testEvent.getEntertainment();
+  Map cost = testEvent.getCost();
 
   @Test
   public void eventPlanner_instantiatesCorrectly_bool(){
@@ -32,5 +34,18 @@ public class EventPlannerTest {
   @Test
   public void getEntertainment_getShowsOffered_int(){
     assertEquals(true, entertainmentItems.length >0);
+  }
+
+  @Test
+  public void getCost_checkFoodCosts_int(){
+    assertEquals(10, cost.get(foodItems[0])); //foodItems[0] should be pizza
+  }
+  @Test
+  public void getCost_checkDrinkCosts_int(){
+    assertEquals(10, cost.get(drinkItems[0])); //drinkItems[0] should be juice bar
+  }
+  @Test
+  public void getCost_checkEntertainmentCosts_int(){
+    assertEquals(10, cost.get(entertainmentItems[0])); //entertainmentItems[0] should be dj
   }
 }
