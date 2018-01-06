@@ -69,11 +69,6 @@ public class EventPlannerTest {
     testEvent.setSelection(soda);
     testEvent.costCalc();
 
-//    String selectOne = selection.get(0);
-//    String selectTwo = selection.get(1);
-//    String selectThree = selection.get(2);
-//    System.out.println(String.format("selection: %s, %s, %s", selectOne, selectTwo, selectThree));
-//    System.out.println("Total: " + testEvent.getTotal());
     assertEquals(true, testEvent.getTotal() == 115);
   }
 
@@ -86,11 +81,6 @@ public class EventPlannerTest {
 
     testEvent.costCalc();
 
-//    String selectOne = selection.get(0);
-//    String selectTwo = selection.get(1);
-//    String selectThree = selection.get(2);
-//    System.out.println(String.format("selection: %s, %s, %s -- %d people", selectOne, selectTwo, selectThree, testEvent.getGuests()));
-//    System.out.println("Total: " + testEvent.getTotal());
     assertEquals(true, testEvent.getTotal() == 575);
   }
 
@@ -103,12 +93,6 @@ public class EventPlannerTest {
 
     testEvent.costCalc();
     testEvent.couponCheck("gamer");
-
-//    String selectOne = selection.get(0);
-//    String selectTwo = selection.get(1);
-//    String selectThree = selection.get(2);
-//    System.out.println(String.format("selection: %s, %s, %s -- %d people", selectOne, selectTwo, selectThree, testEvent.getGuests()));
-//    System.out.println("Total: " + testEvent.getTotal());
 
     assertEquals(true, testEvent.getTotal() == 500);
   }
