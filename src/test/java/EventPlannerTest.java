@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import static org.junit.Assert.*;
@@ -103,12 +104,26 @@ public class EventPlannerTest {
     testEvent.costCalc();
     testEvent.couponCheck("gamer");
 
-    String selectOne = selection.get(0);
-    String selectTwo = selection.get(1);
-    String selectThree = selection.get(2);
-    System.out.println(String.format("selection: %s, %s, %s -- %d people", selectOne, selectTwo, selectThree, testEvent.getGuests()));
-    System.out.println("Total: " + testEvent.getTotal());
+//    String selectOne = selection.get(0);
+//    String selectTwo = selection.get(1);
+//    String selectThree = selection.get(2);
+//    System.out.println(String.format("selection: %s, %s, %s -- %d people", selectOne, selectTwo, selectThree, testEvent.getGuests()));
+//    System.out.println("Total: " + testEvent.getTotal());
 
     assertEquals(true, testEvent.getTotal() == 500);
+  }
+
+  @Test
+  public void removeSelect_removeAnItemFromSelection_List(){
+    testEvent.setSelection(pizza);
+    testEvent.setSelection(arcade);
+    testEvent.setSelection(soda);
+
+    List<String> expected = new ArrayList<>();
+    expected.add(arcade);
+    expected.add(soda);
+
+    testEvent.removeSelect(pizza);
+    assertEquals(expected, selection);
   }
 }

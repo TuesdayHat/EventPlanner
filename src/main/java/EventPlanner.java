@@ -67,6 +67,11 @@ public class EventPlanner {
     }
   }
 
+  public void removeSelect(String select){
+    int index = this.selection.indexOf(select);
+    this.selection.remove(index);
+  }
+
   //GETTER FUNCTIONS______________________
   public int getGuests(){
     return guests;
